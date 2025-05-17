@@ -5,13 +5,9 @@ export enum KitchenType {
   ITALIAN = 'Italian',
   JAPANESE = 'Japanese',
   MEXICAN = 'Mexican',
-  CHINESE = 'Chinese',
-  AMERICAN = 'American',
-  FRENCH = 'French',
+  COLOMBIAN = 'Colombian',
   INDIAN = 'Indian',
-  THAI = 'Thai',
-  SPANISH = 'Spanish',
-  OTHER = 'Other',
+  INTERNATIONAL = 'International',
 }
 
 @Entity()
@@ -28,7 +24,7 @@ export class Restaurant {
   @Column({
     type: 'varchar',
     enum: KitchenType,
-    default: KitchenType.OTHER,
+    default: KitchenType.INTERNATIONAL,
   })
   kitchenType: KitchenType;
 
