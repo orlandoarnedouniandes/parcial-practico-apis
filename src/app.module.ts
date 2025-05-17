@@ -15,6 +15,7 @@ import { DishModule } from './modules/dishes/dish.module';
       entities: [Restaurant, Dish],
       synchronize: true, // Only use in development
     }),
+    TypeOrmModule.forFeature([Restaurant, Dish]),
     RestaurantModule,
     DishModule,
   ],
