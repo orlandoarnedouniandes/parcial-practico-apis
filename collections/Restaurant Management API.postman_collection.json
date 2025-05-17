@@ -1,0 +1,435 @@
+{
+	"info": {
+		"_postman_id": "9f81884e-e91c-440b-98a7-08d7371bd607",
+		"name": "Restaurant Management API",
+		"description": "Collection for testing the Restaurant Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29442715"
+	},
+	"item": [
+		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "Clear data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/clear-database",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clear-database"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "Create restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Italian Delight\",\n    \"address\": \"123 Main St, City\",\n    \"kitchenType\": \"Chinesse\",\n    \"webSite\": \"https://italiandelight.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants"
+							]
+						},
+						"description": "Create a new restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all restaurants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants"
+							]
+						},
+						"description": "Get a list of all restaurants"
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"1"
+							]
+						},
+						"description": "Get a specific restaurant by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Italian Delight Updated\",\n    \"address\": \"456 New St, City\",\n    \"kitchenType\": \"Italian\",\n    \"webSite\": \"https://italiandelight-updated.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"1"
+							]
+						},
+						"description": "Update an existing restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"1"
+							]
+						},
+						"description": "Delete a restaurant by ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dishes",
+			"item": [
+				{
+					"name": "Create dish",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Spaghetti Carbonara\",\n    \"description\": \"Classic Italian pasta dish with eggs, cheese, pancetta, and black pepper\",\n    \"price\": -12.99,\n    \"category\": \"test\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/dishes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"dishes"
+							]
+						},
+						"description": "Create a new dish"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all dishes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/dishes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"dishes"
+							]
+						},
+						"description": "Get a list of all dishes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get dish by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/dishes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						},
+						"description": "Get a specific dish by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Update dish",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Spaghetti Carbonara Deluxe\",\n    \"description\": \"Premium Italian pasta dish with eggs, cheese, pancetta, and black pepper\",\n    \"price\": 15.99,\n    \"category\": \"main course\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/dishes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						},
+						"description": "Update an existing dish"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete dish",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/dishes/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"dishes",
+								"1"
+							]
+						},
+						"description": "Delete a dish by ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant-Dish Relationships",
+			"item": [
+				{
+					"name": "Add dish to restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/2/dishes/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"2",
+								"dishes",
+								"2"
+							]
+						},
+						"description": "Add a dish to a restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant dishes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/2/dishes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"2",
+								"dishes"
+							]
+						},
+						"description": "Get all dishes for a specific restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant dish",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/2/dishes/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"2",
+								"dishes",
+								"2"
+							]
+						},
+						"description": "Get all dishes for a specific restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Update dish of restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dishIds\": [2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/2/dishes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"2",
+								"dishes"
+							]
+						},
+						"description": "Add a dish to a restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove dish from restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/restaurants/2/dishes/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"2",
+								"dishes",
+								"2"
+							]
+						},
+						"description": "Remove a dish from a restaurant"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
