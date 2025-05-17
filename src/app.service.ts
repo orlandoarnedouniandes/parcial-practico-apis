@@ -31,6 +31,16 @@ export class AppService {
     // Delete all dishes
     await this.dishRepository.clear();
     
-    return { message: 'Database cleared successfully' };
+    // Reset auto-increment counters in SQLite
+    // For restaurants table
+    await this.restaurantRepository.query('DELETE FROM sqlite_sequence WHERE name = "restaurant"');
+    
+    // For dishes table
+    await this.dishRepository.query('DELETE FROM sqlite_sequence WHERE name = "dish"');
+    
+    // For the join table
+    await this.restaurantRepository.query('DELETE FROM sqlite_sequence WHERE name = "restaurant_dishes"');
+    
+    return { message: 'Database cleared successfully and IDs reset' };
   }
 }
